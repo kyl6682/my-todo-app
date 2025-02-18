@@ -37,6 +37,7 @@ ul {
   height: 400px;
   padding: 10px;
   border: 1px solid green;
+  overflow: scroll;
 }
 
 li {
@@ -62,6 +63,11 @@ span {
 
 .editing-input, .content {
   flex-grow: 1;
+  border: none;
+}
+
+.editing-input:focus {
+  outline-style: none;
 }
 
 .save-button, .cancle-button {
@@ -69,4 +75,37 @@ span {
   font-size: 0.8rem;
   color: #757272;
   font-weight: 600;
+}
+
+.input-container {
+  width: 100%;
+  padding:  0 10px 0 10px;
+  border: 1px solid goldenrod;
+  display: flex;
+  align-self: start;
+}
+
+.input-container > input {
+  width: 80%;
+  height: 40px;
+  border-radius: 999px  0px 0px 999px;
+  border: none;
+  background-color: #efefef;
+  padding-left: 25px;
+  font-size: 1rem;
+}
+
+.input-container > input:focus {
+  outline: none;
+}
+
+.input-container > button {
+  width: 20%;
+  height: 40px;
+  border-radius: 0 999px 999px 0;
+  background-color: #173ebf;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  font-weight: 700;
 }

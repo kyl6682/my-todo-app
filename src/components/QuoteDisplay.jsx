@@ -9,8 +9,8 @@ const QuoteDisplay = () => {
         <>
             {!loading && (
                 <>
-                    <p>{data.message}</p>
-                    <p>{data.author}</p>
+                    <p className="quote-content">{data.message}</p>
+                    <p className="quote-author">{data.author}</p>
                 </>
             )}
         </>

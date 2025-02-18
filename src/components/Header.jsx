@@ -12,10 +12,10 @@ function Header() {
     return (
         <>
             <div className="header-container">
-                <p>{`${year}년 ${month}월 ${date}일`}</p>
-                <h1>Todo List</h1>
-                <div>
-                    <p>오늘의 명언</p>
+                <p className="date">{`${year}년 ${month}월 ${date}일`}</p>
+                <h1>📌 Todo List</h1>
+                <div className="quote-container">
+                    <h3>오늘의 명언</h3>
                     <QuoteDisplay />
                 </div>
             </div>

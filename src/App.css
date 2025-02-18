@@ -33,7 +33,40 @@ main {
 }
 
 ul {
-  width: 353px;
+  width: 100%;
   height: 400px;
+  padding: 10px;
   border: 1px solid green;
+}
+
+li {
+  height: 40px;
+  margin-top: 10px;
+  padding: 5px;
+  list-style: none;
+  text-align: left;
+  border: 1px solid brown;
+  display: flex;
+  justify-self: space-between;
+  align-items: center;
+}
+
+span {
+  margin : 3px;
+  cursor: pointer;
+}
+
+.check-button {
+  width: 7%;
+}
+
+.editing-input, .content {
+  flex-grow: 1;
+}
+
+.save-button, .cancle-button {
+  min-width: 7%;
+  font-size: 0.8rem;
+  color: #757272;
+  font-weight: 600;
 }

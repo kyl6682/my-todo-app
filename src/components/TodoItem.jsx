@@ -21,7 +21,6 @@ const TodoItem = ({ todo, deleteTodo }) => {
     const handleSaveClick = () => {
         const editValue = getInputValue();
         if(editValue.trim === '') return;
-        updateTodo (todo.id, editValue);
         setIsEditing(false);
     }
 
@@ -67,7 +66,7 @@ TodoItem.propTypes = {
     id: PropTypes.number.isRequired,
     content: PropTypes.string.isRequired,
   }).isRequired,
-  updateTodo: PropTypes.func.isRequired,
+  deleteTodo: PropTypes.func.isRequired,
 };
 
 export default TodoItem;

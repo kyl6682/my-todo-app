@@ -5,7 +5,12 @@ function App() {
 
   return (
     <>
-      <TodoList />
+      <div className='container'>
+        <header>헤더 자리</header>
+        <main>
+          <TodoList />
+        </main>
+      </div>
     </>
   )
 }

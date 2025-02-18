@@ -9,16 +9,26 @@ function TodoList() {
         { id: 1, content: "todo item 2" }
     ]);
 
+    // 리스트에 할 일 추가
     const addTodo = (todoContent) => {
         const newTodo = { id: Date.now(), content: todoContent };
         setTodos((prevTodos) => [...prevTodos, newTodo]); 
     };
 
+    // 특정 id의 todo 내용 변경
+    const updateTodo = (id, newContent) => {
+        setTodos((prevTodos) =>
+            prevTodos.map((todo) =>
+                todo.id === id ? {...todo, content:newContent } : todo
+            )
+        )
+    }
+
     return (
         <>
             <ul>
                 {todos.map((todo) => (
-                    <TodoItem key={todo.id} todo={todo} />
+                    <TodoItem key={todo.id} todo={todo} updateTodo = {updateTodo}/>
                 ))}
             </ul>
             <AddTodo addTodo={addTodo} /> 

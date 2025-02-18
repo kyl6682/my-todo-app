@@ -2,11 +2,15 @@ import { useRef } from "react";
 
 const useRefInput = () => {
     const inputRef = useRef(null);
+
     const getInputValue = () => {
-        const useRefInputValue = inputRef.current.value;
-        console.log('useRef input : ', useRefInputValue);
+        if (inputRef.current) {
+            return inputRef.current.value || "";  // undefined 방지
+        }
+        return ""; // `inputRef.current`가 없으면 빈 문자열 반환
     };
-    return {inputRef, getInputValue}
-}
+
+    return { inputRef, getInputValue };
+};
 
 export default useRefInput;

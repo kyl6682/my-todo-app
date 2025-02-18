@@ -21,6 +21,15 @@ function TodoList() {
         // 삭제할 항목의 아이디를 기준으로 필터링 (아닌 것들만 출력)
     };
 
+    // 업데이트 기능
+    const updateTodo = (id, newContent) => {
+        setTodos((prevTodos) => 
+            prevTodos.map((todo) => 
+                todo.id === id ? {...todo, content:newContent} : todo
+            )
+        )
+    }
+
     return (
         <>
             <ul>
@@ -29,6 +38,7 @@ function TodoList() {
                         key={todo.id}
                         todo={todo}
                         deleteTodo={deleteTodo}
+                        updateTodo={updateTodo}
                     />
                 ))}
             </ul>

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 import useRefInput from '../hooks/useTodos';
 
-const TodoItem = ({ todo, deleteTodo }) => {
+const TodoItem = ({ todo, updateTodo, deleteTodo }) => {
     // 완료 되었는지 상태 관리
     const [isComlete, setIsComplete] = useState(false);
     // 수정을 위한 상태 관리
@@ -20,7 +20,9 @@ const TodoItem = ({ todo, deleteTodo }) => {
     // 수정 사항 저장 기능
     const handleSaveClick = () => {
         const editValue = getInputValue();
-        if (editValue.trim === '') return;
+        if (editValue.trim() === '') return;
+        
+        updateTodo(todo.id, editValue) ;
         setIsEditing(false);
     };
 
@@ -120,6 +122,7 @@ TodoItem.propTypes = {
         content: PropTypes.string.isRequired,
     }).isRequired,
     deleteTodo: PropTypes.func.isRequired,
+    updateTodo: PropTypes.func.isRequired,
 };
 
 export default TodoItem;

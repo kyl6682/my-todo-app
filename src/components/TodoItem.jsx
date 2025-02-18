@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import useRefInput from "../hooks/useTodos";
 
-const TodoItem = ({ todo, updateTodo }) => {
+const TodoItem = ({ todo, deleteTodo }) => {
     // 완료 되었는지 상태 관리
     const [isComlete, setIsComplete] = useState(false);
     // 수정을 위한 상태 관리
@@ -50,7 +50,12 @@ const TodoItem = ({ todo, updateTodo }) => {
                     <span onClick={handleEditClick}>수정</span>
                 </>
             )
-        }
+            }
+            <span
+                onClick={() => {
+                    deleteTodo(todo.id)
+                }}
+            >삭제</span>
         </li>
     </>
   );

@@ -15,20 +15,17 @@ function TodoList() {
     setTodos((prevTodos) => [...prevTodos, newTodo]);
   };
 
-  // 특정 id의 todo 내용 변경
-  const updateTodo = (id, newContent) => {
-    setTodos((prevTodos) =>
-      prevTodos.map((todo) =>
-        todo.id === id ? { ...todo, content: newContent } : todo
-      )
-    );
-  };
+  // 리스트 삭제 기능
+  const deleteTodo = (id) => {
+    setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
+    // 삭제할 항목의 아이디를 기준으로 필터링 (아닌 것들만 출력)
+  }
 
   return (
     <>
       <ul>
         {todos.map((todo) => (
-          <TodoItem key={todo.id} todo={todo} updateTodo={updateTodo} />
+          <TodoItem key={todo.id} todo={todo} deleteTodo={deleteTodo} />
         ))}
       </ul>
       <AddTodo addTodo={addTodo} />
